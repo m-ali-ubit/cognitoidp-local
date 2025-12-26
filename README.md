@@ -112,11 +112,11 @@ Note: You must specify a region and fake credentials.
 
 You can configure the behavior using Environment Variables in Docker:
 
-   Variable    | Default          | Description                                    |
----------------|------------------|------------------------------------------------|
-     PORT      | 4566             | The port the server listens on.                |
-   DATA_FILE   | /data/cognito.db | Path inside the container where data is saved. |
- SAVE_INTERVAL | 60               | How often (in seconds) to auto-save to disk.   |
+|   Variable    | Default          | Description                                    |
+|---------------|------------------|------------------------------------------------|
+|     PORT      | 4566             | The port the server listens on.                |
+|   DATA_FILE   | /data/cognito.db | Path inside the container where data is saved. |
+| SAVE_INTERVAL | 60               | How often (in seconds) to auto-save to disk.   |
 
 ## 🧪 Development
 
