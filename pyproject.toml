@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cognitoidp-local"
+version = "0.1.0"
+description = "A lightweight, persistent Cognito mock server using Moto with file-based state persistence."
+readme = "README.md"
+authors = [{ name = "Muhammad Ali", email = "usermalikhan@gmail.com" }]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+dependencies = [
+    "moto[server,cognitoidp]>=5.0.0",
+    "flask",
+    "cryptography"
+]
+keywords = ["aws", "cognito", "cognito-idp", "local"]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.scripts]
+cognitoidp-local = "cognitoidp_local.main:run"
+
+[project.urls]
+homepage = "https://github.com/m-ali-ubit/cognitoidp-local"
+repository = "https://github.com/m-ali-ubit/enum-extension"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "pre-commit",
+    "build",
+    "twine"
+]
+
+[tool.ruff]
+target-version = "py311"
+# Exclude tests/ from strict linting if desired or keep them
+exclude = [".venv", "dist"]
+line-length = 100
+
+[tool.ruff.lint]
+# Enable specific rules:
+# E: pycodestyle errors
+# F: Pyflakes (bugs)
+# I: Isort (import sorting)
+# B: Flake8-bugbear (common python bugs)
+select = ["E", "F", "I", "B"]
+
+# Ignore specific rules:
+# E501: Line too long (handled by formatter usually)
+# E402: Module level import not at top of a file.
+ignore = ["E501", "E402"]
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore unused imports in init files
+"__init__.py" = ["F401"]

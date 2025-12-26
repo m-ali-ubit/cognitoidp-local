@@ -1,0 +1,5 @@
+moto[server,cognitoidp]>=5.0.0
+flask
+cryptography
+pytest
+boto3
